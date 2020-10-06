@@ -6,11 +6,8 @@ package:
 
 source:
   fn: swig-{{ version }}.tar.gz  # [unix]
-  url: http://prdownloads.sourceforge.net/swig/swig-{{ version }}.tar.gz  # [unix]
-  sha256: daadb32f19fe818cb9b0015243233fc81584844c11a48436385e87c050346559  # [unix]
-  fn: swigwin-{{ version }}.zip  # [win]
-  url: http://prdownloads.sourceforge.net/swig/swigwin-{{ version }}.zip  # [win]
-  sha256: daadb32f19fe818cb9b0015243233fc81584844c11a48436385e87c050346559  # [win]
+  url: https://sourceforge.net/projects/swig/files/swig/swig-{{ version }}/swig-{{ version }}.tar.gz
+  sha256: daadb32f19fe818cb9b0015243233fc81584844c11a48436385e87c050346559
 
 build:
   number: 3
