@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make     # [unix]
-    - libtool  # [unix]
+    - gnuconfig  # [unix]
   host:        # [unix]
     - pcre2    # [unix]
     - zlib     # [unix]
