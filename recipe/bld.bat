@@ -1,4 +1,6 @@
-COPY swig.exe %LIBRARY_BIN%\
-mkdir %LIBRARY_BIN%\Lib
-robocopy Lib %LIBRARY_BIN%\Lib\ * /E
-COPY LICENSE %LIBRARY_BIN%\SWIG_LICENSE
+cmake -G "NMake Makefiles" ^
+  -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
+  -DCMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
+  . || exit 1
+
+cmake --build . --config Release --target install || exit 2
