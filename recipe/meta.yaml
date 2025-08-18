@@ -1,12 +1,13 @@
-{% set version = "4.3.0" %}
+{% set name = "swig" %}
+{% set version = "4.3.1" %}
 
 package:
-  name: swig
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/swig/swig/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f2136da1137a20dfcec795fe0d17ca1a2465d28e3b307f122526629b6b2f2294
+  url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: c6091ef5f2e397945a66899bf6859845f35ef603340e79c086d7f2ecf348678c
 
 build:
   number: 0
@@ -14,26 +15,28 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - gnuconfig    # [unix]
-    - bison        # [unix]
-    - make         # [unix]
-    - automake     # [unix]
-    - pkg-config   # [unix]
-    - cmake        # [win]
-    - msys2-bison  # [win]
+    - gnuconfig          # [unix]
+    - bison >=3.5        # [unix]
+    - make               # [unix]
+    - automake           # [unix]
+    - pkg-config         # [unix]
+    - cmake              # [win]
+    - msys2-bison >=3.5  # [win]
   host:
-    - pcre2 10
+    - pcre2 {{ pcre2 }}
     - zlib {{ zlib }}
 
 test:
   commands:
     - swig -help
     - swig -swiglib
+    - ccache-swig -V  # [unix]
 
 about:
-  home: https://www.swig.org/
+  home: https://www.swig.org
   license: GPL-3.0-or-later
   license_file: LICENSE
   license_family: GPL
