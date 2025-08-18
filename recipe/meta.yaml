@@ -33,7 +33,7 @@ test:
   commands:
     - swig -help
     - swig -swiglib
-    - ccache-swig -V
+    - ccache-swig -V  # [unix]
 
 about:
   home: https://www.swig.org
