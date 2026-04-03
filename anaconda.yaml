@@ -1,5 +1,5 @@
 anaconda_config_version: 1
 upstream_sources:
   - webpage:
-      url: http://prdownloads.sourceforge.net/swig/swig-{}.tar.gz
+      url: http://www.swig.org/download.html
       regex: swig-([\d.]+)\.tar\.gz
