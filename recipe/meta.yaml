@@ -1,5 +1,5 @@
 {% set name = "swig" %}
-{% set version = "4.4.1" %}
+{% set version = "4.5.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8bf32042beb7ee1eeb5c71aa15a62513d964893f84234f2cd77e4a8e2ed41e87
+  sha256: dd219a0c8947afe63b818892304390427c2ee7f6edfa1a37853d4efd891982be
 
 build:
   number: 0
